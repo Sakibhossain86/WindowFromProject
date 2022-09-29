@@ -1,0 +1,20 @@
+﻿CREATE TABLE Player
+(
+	PlayerId INT PRIMARY KEY,
+	PlayerName NVARCHAR(40) NOT NULL,
+	DateOfBirth DATE NOT NULL,
+	PlayerPosition NVARCHAR(40) NOT NULL,
+	Picture NVARCHAR(150) NOT NULL,
+	IsPlaying BIT
+
+)
+GO
+CREATE TABLE Club
+(
+	ClubId INT PRIMARY KEY,
+	ClubName NVARCHAR(40) NOT NULL,
+	Orgin NVARCHAR(50) NOT NULL,
+	League NVARCHAR(40) NOT NULL,
+	PlayerId INT REFERENCES Player(PlayerId)
+)
+GO
